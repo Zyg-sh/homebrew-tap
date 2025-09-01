@@ -5,27 +5,39 @@
 class Zyg < Formula
   desc "Professional development workflow tool for managing repositories and team collaboration"
   homepage "https://zyg.sh"
-  version "0.1.5"
+  version "0.1.9"
   license "MIT"
 
   depends_on "git" => :required
 
   on_macos do
-    url "https://github.com/Ghvstcode/zyg/releases/download/v0.1.5/zyg_Darwin_all.tar.gz"
-    sha256 "b75088f8a4e0f1977e6f01012e8fc36e4b17e11ab87e4b51faaa93b90c9e86ea"
+    on_intel do
+      url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.1.9/zyg_Darwin_x86_64.tar.gz"
+      sha256 "dad7d8fa43d1bc2908c9ef58c99cd17020981f8b030bc755022ae2318004d2c3"
 
-    def install
-      bin.install "zyg"
-      # Generate shell completions
-      generate_completions_from_executable(bin/"zyg", "completion")
+      def install
+        bin.install "zyg"
+        # Generate shell completions
+        generate_completions_from_executable(bin/"zyg", "completion")
+      end
+    end
+    on_arm do
+      url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.1.9/zyg_Darwin_arm64.tar.gz"
+      sha256 "1ad0d07b16970f83fbfca52ce71db4afe739805187906483de42d40e13e7c84b"
+
+      def install
+        bin.install "zyg"
+        # Generate shell completions
+        generate_completions_from_executable(bin/"zyg", "completion")
+      end
     end
   end
 
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Ghvstcode/zyg/releases/download/v0.1.5/zyg_Linux_x86_64.tar.gz"
-        sha256 "ec3a684024dec07b6d5f6cc251ce7b02944ee8e20845ef36f4a5c55c2404adaf"
+        url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.1.9/zyg_Linux_x86_64.tar.gz"
+        sha256 "4715b87b0b43b84c41c65580da081282def52bd01731776110a49287ff02d669"
 
         def install
           bin.install "zyg"
@@ -36,8 +48,8 @@ class Zyg < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Ghvstcode/zyg/releases/download/v0.1.5/zyg_Linux_arm64.tar.gz"
-        sha256 "ddb13869c4cb42d26329e762c84a8741ac1c3cb0da4ee8ddd519bea90a6e0387"
+        url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.1.9/zyg_Linux_arm64.tar.gz"
+        sha256 "e3ebe84a7097960749174bb65f8d88812d388ed62237364faa86ce473167caac"
 
         def install
           bin.install "zyg"
