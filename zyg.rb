@@ -5,15 +5,15 @@
 class Zyg < Formula
   desc "Professional development workflow tool for managing repositories and team collaboration"
   homepage "https://zyg.sh"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   depends_on "git" => :required
 
   on_macos do
     on_intel do
-      url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.0/zyg_Darwin_x86_64.tar.gz"
-      sha256 "a17f865e979726e8a38e5a8122df6b3e043866bdfeda5a9b564c95f61e4d2b11"
+      url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.1/zyg_Darwin_x86_64.tar.gz"
+      sha256 "34e582926a391cbaf40519e8feeef9e46c277f23d5e1e0ef3f646987c7f8705b"
 
       def install
         bin.install "zyg"
@@ -22,8 +22,8 @@ class Zyg < Formula
       end
     end
     on_arm do
-      url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.0/zyg_Darwin_arm64.tar.gz"
-      sha256 "89d65ff9ba001ca2e7a8a38af2075cd386918523795f51d671f57eebaa15f741"
+      url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.1/zyg_Darwin_arm64.tar.gz"
+      sha256 "9556e6d4e67f66dd28e8427edb9a8799420c66abf83c2256920475ffa6152ea1"
 
       def install
         bin.install "zyg"
@@ -36,8 +36,8 @@ class Zyg < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.0/zyg_Linux_x86_64.tar.gz"
-        sha256 "d02a663efea715d279dd1e8939640f0c33fc17a03299d70a704bd3827c322df1"
+        url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.1/zyg_Linux_x86_64.tar.gz"
+        sha256 "af5282afdcb8a8b647551f53e4135feb5a2191c4add4a432330a89bd852c3d50"
 
         def install
           bin.install "zyg"
@@ -48,8 +48,8 @@ class Zyg < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.0/zyg_Linux_arm64.tar.gz"
-        sha256 "e4d3b1406600bd4b3e8c550c056ced69f3e03cb83e4f5223dae7d67441457b30"
+        url "https://github.com/Zyg-sh/homebrew-tap/releases/download/v0.2.1/zyg_Linux_arm64.tar.gz"
+        sha256 "5b6ceafbdc6bc54167a1927d0ceb2ab2a505a648477e44282ab50694c63cec88"
 
         def install
           bin.install "zyg"
